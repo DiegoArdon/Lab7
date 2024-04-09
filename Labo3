@@ -1,0 +1,85 @@
+Ejercicio #1 
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+void aDatos() {
+	ofstream archivo("Ejer1.txt");
+
+	if (archivo.is_open()) {
+		string nombre;
+		int edad;
+		cout << "Ingrese el nombre y la edad: (Separados por un espacio, para finalizar ciclo colocar 'fin'   ";
+		while (true) {
+			cin >> nombre;
+			if (nombre == "fin") {
+				break;
+			}
+			cin >> edad;
+			archivo << nombre << " " << edad << endl;
+		}
+		archivo.close();
+	}
+	else {
+		cout << "No se puede abrir el archivo." << endl;
+	}
+}
+	int main() {
+		aDatos();
+		return 0;
+}
+
+Ejercicio #2.
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class persona {
+
+private:
+	string nombre;
+	int edad;
+	string ocupacion;
+
+public:
+	void setNombre(string n) {
+		nombre = n;
+	}
+	void setEdad(int e) {
+		edad = e;
+	}
+	void setOcupacion(string op) {
+		ocupacion = op;
+	}
+	string getNombre() {
+		return nombre;
+	}
+	int getEdad() {
+		return edad;
+	}
+	string getOcupacion() {
+		return ocupacion;
+	}
+};
+int main() {
+	persona persona1;
+	persona persona2;
+
+	persona1.setNombre("Diego");
+	persona1.setEdad(29);
+	persona1.setOcupacion("Ingeniero");
+
+	persona2.setNombre("Fatima");
+	persona2.setEdad(32);
+	persona2.setOcupacion("Psicologa");
+	
+	cout << "Persona 1: " << persona1.getNombre() << ", " << persona1.getEdad() << " años, " << persona1.getOcupacion() << std::endl;
+	cout << "Persona 2: " << persona2.getNombre() << ", " << persona2.getEdad() << " años, " << persona2.getOcupacion() << std::endl;
+	return 0;
+}
+
+
+Ejercicio #3.
